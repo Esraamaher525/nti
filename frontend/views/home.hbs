@@ -1,0 +1,21 @@
+{{>header}}
+   <select id="selectLang">
+        <option value="1" selected="selected">en</option>
+        <option value="2" >ar</option>
+    </select>  
+<div class="row">
+    {{#each data}}
+        <div class="card col-md-3 mx-1 p-0">
+             <a href="articles/{{this.id}}">
+                <div class="card-body">
+                    <image src={{this.user.image}}></image>
+                    <h3>name is : {{this.user.name}}</h3>
+                    <h5 class="card-title">Article ID is {{this.id}}</h5>
+                </div>
+             </a>
+        </div>
+    {{/each}}
+</div>
+{{>footer}}
+
+

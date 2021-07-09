@@ -1,0 +1,22 @@
+{
+  "name": "task-seesion-4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "document": "^0.4.7",
+    "env-cmd": "^10.1.0",
+    "express": "^4.17.1",
+    "hbs": "^4.1.2",
+    "https": "^1.0.0",
+    "jsdom": "^16.6.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "run": "env-cmd -f ./config/app.env nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
