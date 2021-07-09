@@ -10,12 +10,10 @@ const getDataFromAPI = ( url, cb ) =>{
     const request = api.request(url, (response)=>{
     let result = ''
     response.on('data', (chunk)=>{
-        console.log(chunk.toString())
         result +=chunk.toString()
     })
     response.on('end', ()=>{
         const all = JSON.parse(result)
-        console.log(all)
         cb(all, false)
     })
     })
@@ -25,17 +23,16 @@ const getDataFromAPI = ( url, cb ) =>{
 const readAllData = (req, response) => {
     url=`http://medical.mind-techs.com/api/blog/${langVal}/0/11`
     getDataFromAPI(url,(res,err)=>{
-        console.log("url")
         if(err) response.send(err)
-        response.render('home',{data:res.data[0].reactions,title:"home"})
+        response.render('home',{data:res.data,title:"home"})
     })  
 }
 const getSingleArticle = (req,response)=>{   
     url= `http://medical.mind-techs.com/api/SingleBlog/${req.params.id}/1`
     getDataFromAPI(url, (res, err)=>{
-        console.log(res)
+        console.log(res.data)
         if(err) response.send(err)
-        response.render('single', {data:res, title:'Single Article '})
+        response.render('single', {data:res.data[0], title:'Single Article'})
     })
 
 

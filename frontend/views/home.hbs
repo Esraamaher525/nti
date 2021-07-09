@@ -5,12 +5,11 @@
     </select>  
 <div class="row">
     {{#each data}}
-        <div class="card col-md-3 mx-1 p-0">
+        <div class="card col-md-10 mx-1 p-0">
              <a href="articles/{{this.id}}">
                 <div class="card-body">
-                    <image src={{this.user.image}}></image>
-                    <h3>name is : {{this.user.name}}</h3>
-                    <h5 class="card-title">Article ID is {{this.id}}</h5>
+                    <h3>title is : {{this.title}}</h3>
+                    <h5 class="card-title">{{this.content}}</h5>
                 </div>
              </a>
         </div>
